@@ -26,3 +26,4 @@
                     %button.btn.btn-sm.btn-outline-secondary{:type => "button"} Details
                   %small.text-muted
                     = "#{video.duration_in_minutes} mins"
+      = paginate @videos

@@ -30,6 +30,9 @@ gem 'activeresource-response'
 # Haml generators and templating engine.
 gem 'haml-rails', '~> 2.0.1'
 
+# Collection pagination
+gem 'kaminari', '~> 1.1.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

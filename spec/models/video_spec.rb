@@ -9,7 +9,7 @@ describe Video do
 
   describe '.all' do
     subject(:videos) { Video.all(params: params) }
-    subject(:pagination) { JSON.parse(videos.zype_api.body).dig('pagination') }
+    subject(:pagination) { JSON.parse(videos.zype_response.body).dig('pagination') }
     let(:params) { {} }
 
     it 'returns first 10 videos by default' do
