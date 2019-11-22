@@ -1,11 +1,25 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title ZypeChallenge
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    %header
+      .navbar.navbar-dark.bg-dark.box-shadow
+        .container.d-flex.justify-content-between
+          %a.navbar-brand.d-flex.align-items-center{href: "#"}
+            %svg.mr-2{fill: "none", height: "20", stroke: "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2", viewbox: "0 0 24 24", width: "20", xmlns: "http://www.w3.org/2000/svg"}
+              %path{d: "M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"}
+              %circle{cx: "12", cy: "13", r: "4"}
+            %strong Zype
+    %main{role: "main"}
+      %section.jumbotron.text-center
+        .container
+          %h1.jumbotron-heading Coding Challenge
+          %p.lead.text-muted
+            = "#{@title || 'Video FEED'}"
+      = yield

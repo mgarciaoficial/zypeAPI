@@ -7,6 +7,18 @@ describe Video do
     end
   end
 
+  it { is_expected.to respond_to(:id) }
+  it { is_expected.to respond_to(:source) }
+
+  describe '#id' do
+    let(:video) { Video.first }
+
+    it 'aliases id to _id' do
+      expect(video.id).not_to be_nil
+      expect(video.id).to eq(video._id)
+    end
+  end
+
   describe '.all' do
     subject(:videos) { Video.all(params: params) }
     subject(:pagination) { JSON.parse(videos.zype_response.body).dig('pagination') }
@@ -28,6 +40,16 @@ describe Video do
   
         expect(pagination['current']).to eq(2)
       end
+    end
+  end
+
+  describe '.find' do
+    let(:video) { Video.first }
+    let(:found_video) { Video.find(video.id) }
+
+    it 'aliases id to _id' do
+      expect(found_video).not_to be_nil
+      expect(found_video.id).to eq(video._id)
     end
   end
 end
