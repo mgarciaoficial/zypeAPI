@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 describe 'Video Routing' do
+  describe 'GET /' do
+    it 'routes to #index' do
+      expect(get: '/').to route_to('videos#index')
+    end
+  end
+
   describe 'GET /videos' do
     it 'routes to #index' do
       expect(get: '/videos').to route_to('videos#index')
