@@ -47,6 +47,4 @@ Even though ActiveResource is design to be completely transparent, it expects th
 
 To encapsulate the communication logic in a single, replaceable component, a small facade was added called **ApiRecord**. Any model inheriting from it, will automatically know how to communicate with the Zype API.
 
-```
-![alt text](https://raw.githubusercontent.com/mgarciaoficial/zypeAPI/master/ZypeChallenge.png?token=AN3QBH7MGKUXFYQA2WCNE7253NOXM "Solution diagram")
-```
+![diagram](./ZypeChallenge.png)
