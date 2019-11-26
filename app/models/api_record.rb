@@ -2,7 +2,7 @@ class ApiRecord < ActiveResource::Base
   self.site = 'https://api.zype.com'
   add_response_method :zype_response
 
-  API_KEY = 'XWny5j0V89yb1uZu6SI_D95EADV5FzBYldE9Ny0_q0GOzcWLiruPyhN-f2Pcyohf'
+  API_KEY = Rails.application.credentials[:api_key] || ENV['API_KEY']
   
   class << self  
     def instantiate_collection(collection, original_params = {}, prefix_options = {})

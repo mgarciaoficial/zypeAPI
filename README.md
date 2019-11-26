@@ -22,6 +22,8 @@ ZypeApi coding challenge.
 
 * Run bundle install.
 
+* ZypeApi Challenge assumes you have the api key defined in credentials as **api_key** at root level. It also allows it to be set in an **ENV** variable at **API_KEY**.
+
 * Enjoy!
 
 # Architecture
